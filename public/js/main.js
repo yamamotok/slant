@@ -1,4 +1,5 @@
 (function (root, $) {
+    var numberOfPosts = 15;
     var timeline = root.timeline = new TimeLine();
     var fbMessageList = new Firebase('https://sweltering-torch-3371.firebaseio.com/chat');
     var broadcaster = root.broadcaster = new signals.Signal();
@@ -7,7 +8,7 @@
         return $('[postindex="' + post.internalId + '"]');
     }
 
-    fbMessageList.limitToLast(30).on('child_added', function(snapshot) {
+    fbMessageList.limitToLast(numberOfPosts).on('child_added', function(snapshot) {
         var key = snapshot.key();
         var data = snapshot.val();
         var post = new root.Post(data, key);
@@ -21,7 +22,7 @@
         elm.rotatable('angle', data.angle);
     });
 
-    fbMessageList.limitToLast(30).on('child_changed', function(snapshot) {
+    fbMessageList.limitToLast(numberOfPosts).on('child_changed', function(snapshot) {
         var key = snapshot.key();
         var data = snapshot.val();
         var post = timeline.findPostByFirebaseKey(key);
@@ -68,7 +69,7 @@
     }
 
     function scrollToPost(elm) {
-        $('html,body').animate({
+        $('html,body').stop(false, false).animate({
             scrollTop: elm.offset().top
         }, 600);
     }
