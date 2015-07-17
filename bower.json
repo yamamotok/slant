@@ -1,0 +1,26 @@
+{
+  "name": "node-js-getting-started",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/heroku/node-js-getting-started",
+  "authors": [
+    "Keisuke Yamamoto <keisuke@butterjam.cc>"
+  ],
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "~2.10.3",
+    "js-signals": "~1.0.0",
+    "rivets": "~0.8.1"
+  }
+}

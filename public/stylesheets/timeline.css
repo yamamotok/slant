@@ -1,0 +1,74 @@
+
+/**
+ * Footer
+ */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 8rem;
+    width: 100%;
+    background: rgba(238, 224, 221, 0.8);
+    overflow: hidden;
+}
+
+#post-form {
+    position: relative;
+}
+
+#post-form > div {
+    position: absolute;
+    top: 0;
+}
+
+#post-form > div.post-input {
+    left: 0;
+    text-align: left;
+    width: 100%;
+    padding-right: 110px;
+}
+
+#post-form > div.post-button {
+    right: 0;
+    text-align: right;
+}
+
+/**
+ * Timeline
+ */
+#posts {
+    margin-bottom: 8.8rem;
+}
+
+#posts .each-post {
+    padding: 0;
+}
+
+#posts .each-post p {
+    padding: 0;
+    margin: 0;
+}
+
+#posts .each-post > table {
+    width: 100%;
+}
+
+#posts .each-post > table td {
+    vertical-align: middle;
+}
+
+#posts .each-post > table td.handle {
+    min-width: 40px;
+}
+
+#posts .each-post > table td.message {
+    width: 100%;
+    padding: 15px 0;
+    min-height: 2rem;
+}
+
+#posts .timestamp {
+    font-size: 88%;
+    color: #AAA;
+    text-align: right;
+}
