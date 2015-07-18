@@ -1,34 +1,36 @@
 html, body {
     font-family: 'Exo 2', Arial, serif;
     font-weight: 400;
+    color: #404040;
 }
 
 h1 {
     font-family: 'Exo 2', Arial, serif;
-    font-weight: 400;
+    font-weight: 800;
+    font-style: italic;
 }
 
 .mui-appbar {
-    background: rgba(238, 224, 221, 0.8);
-    margin-bottom: 15px;
+    background-color: transparent;
 }
 
 .mui-appbar h1 {
     margin: 0 0 0 15px;
-    color: #FFF;
 }
 
 .mui-appbar .appbar-ui {
     margin: 0 15px 0 0;
 }
 
-.mui-appbar .appbar-ui a,
-.mui-appbar .appbar-ui a:active,
-.mui-appbar .appbar-ui a:visited {
-    color: #FFF;
+.mui-appbar a,
+.mui-appbar a:active,
+.mui-appbar a:hover,
+.mui-appbar a:visited {
+    color: rgba(0, 0, 0, .18);
 }
-.mui-appbar .appbar-ui a:active {
-    opacity: 0.5;
+
+.mui-appbar a:active, .mui-appbar a:hover {
+    color: rgba(0, 0, 0, .25);
 }
 
 .mui-appbar .appbar-ui i {
@@ -44,7 +46,7 @@ footer {
     bottom: 0;
     height: 8rem;
     width: 100%;
-    background: rgba(238, 224, 221, 0.8);
+    background: rgba(233, 233, 233, 0.8);
     overflow: hidden;
 }
 
