@@ -21,6 +21,7 @@
   "dependencies": {
     "moment": "~2.10.3",
     "js-signals": "~1.0.0",
-    "rivets": "~0.8.1"
+    "rivets": "~0.8.1",
+    "material-design-icons": "~2.0.0"
   }
 }

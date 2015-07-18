@@ -8,6 +8,33 @@ h1 {
     font-weight: 400;
 }
 
+.mui-appbar {
+    background: rgba(238, 224, 221, 0.8);
+    margin-bottom: 15px;
+}
+
+.mui-appbar h1 {
+    margin: 0 0 0 15px;
+    color: #FFF;
+}
+
+.mui-appbar .appbar-ui {
+    margin: 0 15px 0 0;
+}
+
+.mui-appbar .appbar-ui a,
+.mui-appbar .appbar-ui a:active,
+.mui-appbar .appbar-ui a:visited {
+    color: #FFF;
+}
+.mui-appbar .appbar-ui a:active {
+    opacity: 0.5;
+}
+
+.mui-appbar .appbar-ui i {
+    font-size: 32px;
+}
+
 /**
  * Footer
  */

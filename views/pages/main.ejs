@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <!-- font -->
+    <link href='https://fonts.googleapis.com/css?family=Exo+2:400,800italic,400italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Infrastructure -->
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
@@ -37,8 +40,23 @@
 
 <body>
 <!-- example content -->
+<div class="mui-appbar">
+    <table width="100%">
+        <tr style="vertical-align:middle;">
+            <td class="mui-appbar-height">
+                <h1><%= name %> room</h1>
+            </td>
+            <td class="mui-appbar-height" align="right">
+                <div class="appbar-ui">
+                    <a href="/"><i class="material-icons">home</i></a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
 <div class="mui-container">
-    <h1><%= name %> room</h1>
+
     <div id="posts">
         <div class="each-post mui-panel rotatable" rv-each-post="timeline.buffer" rv-postindex="post.internalId">
             <table>
@@ -47,6 +65,7 @@
                     <td class="message">
                         <div>
                             <p>{ post.message }</p>
+
                             <p class="timestamp">{ post.timestamp | date }</p>
                         </div>
                     </td>
@@ -62,8 +81,11 @@
         <form name="postForm" method="get" onsubmit="submitPost();return false;">
             <div class="mui-form-group">
                 <div id="post-form">
-                    <div class="mui-align-middle post-input"><input name="message" type="text" class="mui-form-control" placeholder="Your message"></div>
-                    <div class="mui-align-middle post-button"><button type="submit" class="mui-btn mui-btn-default mui-btn-raised">Post</button></div>
+                    <div class="mui-align-middle post-input"><input name="message" type="text" class="mui-form-control"
+                                                                    placeholder="Your message"></div>
+                    <div class="mui-align-middle post-button">
+                        <button type="submit" class="mui-btn mui-btn-default mui-btn-raised">Post</button>
+                    </div>
                 </div>
             </div>
         </form>
