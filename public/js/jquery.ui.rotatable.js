@@ -8,14 +8,29 @@ $.widget("ui.rotatable", $.ui.mouse, {
         snap: false,
         step: 22.5,
 
-        
         rotationCenterX: false, 
         rotationCenterY: false,
+
+        supportTouch: false,
 
         // callbacks
         start: null,
         rotate: null,
         stop: null
+    },
+
+    getProperMouseEventName: function(name) {
+        //var table = {
+        //    mousedown: 'touchstart',
+        //    mousemove: 'touchmove',
+        //    mouseup: 'touchend'
+        //};
+        //if (this.options.supportTouch) {
+        //    if (name in table) {
+        //        return table[name];
+        //    }
+        //}
+        return name;
     },
 
     rotationCenterX: function(x) {
@@ -70,7 +85,7 @@ $.widget("ui.rotatable", $.ui.mouse, {
         this.element.bind('wheel', this.listeners.wheelRotate);
 
         handle.draggable({ helper: 'clone', start: this.dragStart, handle: handle });
-        handle.bind('mousedown', this.listeners.startRotate);
+        handle.bind(this.getProperMouseEventName('mousedown'), this.listeners.startRotate);
         if (useDefaultHandle) handle.appendTo(this.element);
         
         if(this.options.angle != false) {
@@ -141,8 +156,8 @@ $.widget("ui.rotatable", $.ui.mouse, {
 
         this._propagate("start", event);
 
-        $(document).bind('mousemove', this.listeners.rotateElement);
-        $(document).bind('mouseup', this.listeners.stopRotate);
+        $(document).bind(this.getProperMouseEventName('mousemove'), this.listeners.rotateElement);
+        $(document).bind(this.getProperMouseEventName('mouseup'), this.listeners.stopRotate);
 
         return false;
     },

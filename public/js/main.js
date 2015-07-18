@@ -1,5 +1,6 @@
 (function (root, $) {
     var numberOfPosts = 15;
+    var supportTouch = 'ontouchend' in root.document;
     var timeline = root.timeline = new TimeLine();
     var fbMessageList = new Firebase('https://sweltering-torch-3371.firebaseio.com/chat');
     var broadcaster = root.broadcaster = new signals.Signal();
@@ -62,6 +63,8 @@
             // Set the rotation center at (25%, 75%).
             rotationCenterX: 50.0,
             rotationCenterY: 50.0,
+
+            supportTouch: supportTouch,
 
             handle: handle
         };
