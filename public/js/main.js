@@ -2,8 +2,9 @@
     var numberOfPosts = 15;
     var supportTouch = 'ontouchend' in root.document;
     var timeline = root.timeline = new TimeLine();
-    var fbMessageList = new Firebase('https://sweltering-torch-3371.firebaseio.com/chat');
     var broadcaster = root.broadcaster = new signals.Signal();
+    var chatRoomName = root.chatRoomName;
+    var fbMessageList = new Firebase('https://sweltering-torch-3371.firebaseio.com/chat/' + chatRoomName);
 
     function findElementOfPost(post) {
         return $('[postindex="' + post.internalId + '"]');

@@ -1,73 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Infrastructure -->
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <!-- font -->
+    <link href='http://fonts.googleapis.com/css?family=Exo+2:400,800italic,400italic' rel='stylesheet' type='text/css'>
 
     <!-- load MUI -->
     <link href="//cdn.muicss.com/mui-0.1.18/css/mui.min.css" rel="stylesheet" type="text/css"/>
     <script src="//cdn.muicss.com/mui-0.1.18/js/mui.min.js"></script>
 
-    <!-- jQuery and rotatable -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.11.3.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="/js/jquery.ui.rotatable.js"></script>
-
-    <!-- Libraries -->
-    <script src="/js-signals/dist/signals.js"></script>
-    <script src="/moment/moment.js"></script>
-    <script src="/sightglass/index.js"></script>
-    <script src="/rivets/dist/rivets.min.js"></script>
-
-    <!-- Classes -->
-    <script src="/js/timeline.js"></script>
-    <script src="/js/timeline_post.js"></script>
-
     <!-- My own style -->
-    <link rel="stylesheet" href="/stylesheets/timeline.css">
-</head>
+    <link rel="stylesheet" href="/stylesheets/index.css">
 
+    <title>Slant</title>
+</head>
 <body>
-<!-- example content -->
+
 <div class="mui-container">
-    <h1>Room</h1>
-    <div id="posts">
-        <div class="each-post mui-panel rotatable" rv-each-post="timeline.buffer" rv-postindex="post.internalId">
-            <table>
-                <tr>
-                    <td class="handle">&nbsp;</td>
-                    <td class="message">
-                        <div>
-                            <p>{ post.message }</p>
-                            <p class="timestamp">{ post.timestamp | date }</p>
-                        </div>
-                    </td>
-                    <td class="handle">&nbsp;</td>
-                </tr>
-            </table>
+    <div id="container">
+        <h1>Slant</h1>
+        <p>Chose a chat room</p>
+        <div id="room-list" class="mui-align-bottom">
+            <form action="/" method="post" name="form1">
+                <div class="mui-select">
+                    <select name="name">
+                        <option value="rakuda">Rakuda</option>
+                        <option value="yagi">Yagi</option>
+                        <option value="koushi">Koushi</option>
+                    </select>
+                </div>
+                <button type="submit" class="mui-btn mui-btn-default mui-btn-raised">Enter</button>
+            </form>
         </div>
+
     </div>
 </div>
 
-<footer>
-    <div class="mui-container">
-        <form name="postForm" method="get" onsubmit="submitPost();return false;">
-            <div class="mui-form-group">
-                <div id="post-form">
-                    <div class="mui-align-middle post-input"><input name="message" type="text" class="mui-form-control" placeholder="Your message"></div>
-                    <div class="mui-align-middle post-button"><button type="submit" class="mui-btn mui-btn-default mui-btn-raised">Post</button></div>
-                </div>
-            </div>
-        </form>
-    </div>
-</footer>
-
-
-<script src="/js/main.js"></script>
-<script src="/js/jquery.ui.touch-punch.js"></script>
 </body>
 </html>
