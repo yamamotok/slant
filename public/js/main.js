@@ -92,6 +92,7 @@
         if (!post) return;
 
         fbMessage.set(post.toFirebaseRecord());
+        document.forms['postForm']['message'].value = '';
     }
     root.submitPost = submitPost;
 

@@ -22,13 +22,13 @@ app.get('/', function (request, response) {
 
 app.post('/', function (request, response) {
     var name = request.body.name;
-    if (!name || !/[a-zA-Z0-9-]{5,30}/.test(name)) {
+    if (!name || !/[a-zA-Z0-9-]{3,30}/.test(name)) {
         name = 'default'
     }
     response.redirect('/main/' + name);
 });
 
-app.get('/main/:name([a-zA-Z0-9-]{5,30})', function (request, response) {
+app.get('/main/:name([a-zA-Z0-9-]{3,30})', function (request, response) {
     var name = request.params.name || 'default';
     response.render('pages/main', {name: name});
 });
